@@ -26,6 +26,8 @@ export default class Sexy extends React.Component {
       this.setState({record: record.slice(0, length-1) });
     } else if (num !== '0' && (!record || record[length] !== ' ') ) {
       this.setState({record: record + num});
+    } else {
+      this.setState({record: record + num})
     }
   }
 

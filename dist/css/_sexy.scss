@@ -24,6 +24,15 @@ $gradient-2: #795ae1;
   background: linear-gradient($degree, $gradient-1, $gradient-2); /* Standard syntax */
 }
 
+@mixin unselectable() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /* -------------------------------------------------------------------------- */
 /* Sexy!
 /* -------------------------------------------------------------------------- */
@@ -34,6 +43,7 @@ $gradient-2: #795ae1;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include unselectable();
 
   > div {
 
@@ -203,7 +213,6 @@ $gradient-2: #795ae1;
             width: 25%;
           }
 
-
           .previous-record {
             float: right;
             font-size: 10px;
@@ -214,7 +223,6 @@ $gradient-2: #795ae1;
             text-align: right;
           }
         }
-
       }
 
       .history {
@@ -242,7 +250,6 @@ $gradient-2: #795ae1;
           span:hover {
             color: white*0.7;
           }
-
         }
 
         .history-2 {
@@ -262,9 +269,7 @@ $gradient-2: #795ae1;
               color: $sand;
             }
           }
-
         }
-        
       }
 
       .button-group {
@@ -284,8 +289,6 @@ $gradient-2: #795ae1;
             border: 1px solid $left-button*1.35;
             position: relative;
             cursor: pointer;
-
-            
           }
 
           > div:hover {

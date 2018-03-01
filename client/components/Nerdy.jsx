@@ -12,15 +12,41 @@ export default class Nerdy extends React.Component {
       end: false,
       alignItems: 'flex-start'
     }
+  }
 
-    this.handleClick = this.handleClick.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
+
+  handleClear() {
+    this.setState({end: false, record: '', result: '', view: ''});
+  }
+
+  handleClickKnob() {
+    if (this.state.alignItems === 'flex-start') {
+      this.setState({alignItems: 'center'})
+    } else if (this.state.alignItems === 'center') {
+      this.setState({alignItems: 'flex-end'});
+    } else {
+      this.setState({alignItems: 'flex-start'});
+    }
+  }
+
+  handleSquareRoot() {
+    let record = this.state.record;
+    let square = Math.sqrt(eval(record)).toString().slice(0, 12);
+
+    this.setState({
+      record: square, 
+      result: square,
+      end: true,
+      show: 'result'
+    });
   }
 
   handleClick(num) {
     let record = this.state.record;
     let length = record.length;
     let end = this.state.end;
+    let result = this.state.result;
+    let enter = this.state.enter;
     let type = '';
 
     if (num === '1' || num === '2' || num === '3' || num === '4' || num === '5' || num === '6' || num === '7' || num === '8' || num === '9' || num === '0') {
@@ -55,9 +81,10 @@ export default class Nerdy extends React.Component {
       if (end) {
         this.setState({
           end: false, 
-          show: 'result', 
+          show: 'result',
           result: eval(record).toString().slice(0, 12), 
-          record: eval(record) + num, enter: 0
+          record: eval(record) + num, 
+          enter: 0
         })
       } else {
         this.setState({
@@ -71,33 +98,8 @@ export default class Nerdy extends React.Component {
     }
   }
 
-  handleClear() {
-    this.setState({end: false, record: '', result: '', view: ''});
-  }
-
-  handleClickKnob() {
-    if (this.state.alignItems === 'flex-start') {
-      this.setState({alignItems: 'center'})
-    } else if (this.state.alignItems === 'center') {
-      this.setState({alignItems: 'flex-end'});
-    } else {
-      this.setState({alignItems: 'flex-start'});
-    }
-  }
-
-  handleSquareRoot() {
-    let record = this.state.record;
-    let square = Math.sqrt(eval(record)).toString().slice(0, 12);
-
-    this.setState({
-      record: square, 
-      result: square,
-      end: true,
-      show: 'result'
-    });
-  }
-
   handleEnter() {
+    let result = this.state.result;
     let record = this.state.record;
     let length = record.length;
     let lastOp = '';
@@ -110,20 +112,25 @@ export default class Nerdy extends React.Component {
         show: 'result', 
         enter: 1})
     } else {
+      var count = 0;
+
       for (let i = record.length - 1; i > -1; i--) {
         if (record[i] === '+' || record[i] === '-' || record[i] === '*' || record[i] === '/') {
-          lastOp = record.slice(i, length);
+          if(!count) {
+            lastOp = record.slice(i, length);
+            count = 1;
+          }
         }
       }
 
       this.setState({
         end: true, 
-        show: 'result', 
+        show: 'result',
+        record: result + lastOp,
         result: eval(result + lastOp)
       });
     }
   }
-
 
   render() {
     let view = (this.state.show === 'number') ? this.state.view : this.state.result;

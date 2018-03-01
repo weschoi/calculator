@@ -9,9 +9,6 @@ export default class Sexy extends React.Component {
       record: '',
       time: '',
     };
-
-    this.handleClick = this.handleClick.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
   }
 
   handleClick(num) {
@@ -68,7 +65,7 @@ export default class Sexy extends React.Component {
   }
 
   handleClearResults() {
-    this.setState({record: ''});
+    this.setState({record: '', result: ''});
   }
 
   setTime() {

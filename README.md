@@ -1,6 +1,8 @@
 # Calculator
 
-This is a fun project I did in my spare time. The challenge was to create an ultra beautiful, yet logical, UI, while learning SASS/SCSS. The interface features 2 calculators born from different eras: The *Modern* (left) calculator appears as an iPhone app with a present-day aesthetic. The *Old School* calculator replicates the now-obsolete, physical machine. This app is an homage to the progression of UI's over the years using calculators as a case study.
+![](https://i.imgur.com/HTxYyaq.gifv)
+
+This is a fun project I did in my spare time. The challenge was to create an ultra beautiful, yet logical, UI, while learning SASS/SCSS. The interface features 2 calculators born from different eras: The *Modern* (left) calculator appears as an iPhone app with a present-day aesthetic. The *Old School* (right) calculator replicates the now-obsolete, physical machine. This app is an homage to the progression of UI's over the years using calculators as a case study.
 
 [Click here](https://calcstyle.herokuapp.com/) to view the deployed version.
 

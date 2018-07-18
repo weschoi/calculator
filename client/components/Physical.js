@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Nerdy extends React.Component {
+export default class Physical extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -136,8 +136,8 @@ export default class Nerdy extends React.Component {
     let view = (this.state.show === 'number') ? this.state.view : this.state.result;
 
     return (
-      <div className="col-md-6 nerdy">
-        <div className="nerdy-container">
+      <div className="col-12 col-lg physical">
+        <div className="physical-container">
           <div className="braun" style={{marginBottom: '13px'}}></div>
           <div className="view-outer">
             <div className="view-inner">{view}</div>
@@ -190,30 +190,30 @@ export default class Nerdy extends React.Component {
             </div>
             <div>
               <div onClick={() => {this.handleSquareRoot() }}>√</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('7') }}>7</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('8') }}>8</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('9') }}>9</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('7') }}>7</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('8') }}>8</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('9') }}>9</div>
               <div onClick={() => {this.handleClick('/') }}>/</div>
             </div>
             <div>
               <div>%</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('4') }}>4</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('5') }}>5</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('6') }}>6</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('4') }}>4</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('5') }}>5</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('6') }}>6</div>
               <div onClick={() => {this.handleClick('*') }}>x</div>
             </div>
             <div>
               <div>1/x</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('1') }}>1</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('2') }}>2</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('3') }}>3</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('1') }}>1</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('2') }}>2</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('3') }}>3</div>
               <div onClick={() => {this.handleClick('-') }}>-</div>
             </div>
             <div>
               <div onClick={() => {this.handleClear() }}>CE</div>
-              <div className="nerdy-button-2" onClick={() => {this.handleClick('0') }}>0</div>
+              <div className="physical-button-2" onClick={() => {this.handleClick('0') }}>0</div>
               <div onClick={() => {this.handleClick('.') }}>.</div>
-              <div className="nerdy-button-3" onClick={() => {this.handleEnter() }}>=</div>
+              <div className="physical-button-3" onClick={() => {this.handleEnter() }}>=</div>
               <div onClick={() => {this.handleClick('+') }}>+</div>
             </div>
           </div>

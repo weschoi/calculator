@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Sexy extends React.Component {
+export default class Mobile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -98,7 +98,7 @@ export default class Sexy extends React.Component {
 
   render() {
     return (
-      <div className="col-md-6 sexy">
+      <div className="col-12 col-lg mobile">
         <div>
           <div className="iphone-section-1">
             <div className="long-rectangle"></div>
@@ -182,7 +182,7 @@ export default class Sexy extends React.Component {
               <div>
                 <div onClick={() => {this.handleClick('.') }}>.</div>
                 <div onClick={() => {this.handleClick('0') }}>0</div>
-                <div className="sexy-button-equal" onClick={() => {this.handleEnter()}}>=</div>
+                <div className="mobile-button-equal" onClick={() => {this.handleEnter()}}>=</div>
               </div>
             </div>
           </div>

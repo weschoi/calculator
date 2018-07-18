@@ -379,6 +379,127 @@
           background: #ca5028;
           transform: translateY(3px); }
 
+.text-white {
+  color: white; }
+
+/* -------------------------------------------------------------------------- */
+/* desktop!
+/* -------------------------------------------------------------------------- */
+.desktop {
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: url("../img/sierra.jpg") center center no-repeat; }
+  .desktop .desktop-container {
+    display: -webkit-flex;
+    /* Safari */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 480px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    padding: 0 20px 20px 7px;
+    box-shadow: 0px 0px 15px 0px #666666;
+    background: rgba(255, 255, 255, 0.94); }
+    .desktop .desktop-container > div:first-child {
+      display: -webkit-flex;
+      /* Safari */
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: 8%;
+      padding-left: 8px; }
+      .desktop .desktop-container > div:first-child > div {
+        width: 11px;
+        height: 11px;
+        -webkit-border-radius: 11px;
+        -moz-border-radius: 11px;
+        -ms-border-radius: 11px;
+        border-radius: 11px;
+        margin-right: 7px; }
+    .desktop .desktop-container > div:nth-child(2) {
+      width: 100%;
+      height: 27%; }
+    .desktop .desktop-container > div:nth-child(3) {
+      display: -webkit-flex;
+      /* Safari */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 65%; }
+      .desktop .desktop-container > div:nth-child(3) > div {
+        height: 100%; }
+      .desktop .desktop-container > div:nth-child(3) > div:first-child {
+        display: -webkit-flex;
+        /* Safari */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-left: 6px;
+        padding-right: 12px;
+        width: 82%; }
+        .desktop .desktop-container > div:nth-child(3) > div:first-child > div {
+          height: 100%;
+          flex: 1;
+          display: -webkit-flex;
+          /* Safari */
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .desktop .desktop-container > div:nth-child(3) > div:first-child > div > div {
+            width: 100%;
+            height: 20%;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 53px;
+            cursor: pointer; }
+        .desktop .desktop-container > div:nth-child(3) > div:first-child > div:first-child > div:first-child {
+          background-color: #00e3cb;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          border-radius: 50px; }
+      .desktop .desktop-container > div:nth-child(3) > div:nth-child(2) {
+        display: -webkit-flex;
+        /* Safari */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        border-radius: 50px;
+        background-color: #00e3cb;
+        width: 18%; }
+        .desktop .desktop-container > div:nth-child(3) > div:nth-child(2) > div {
+          width: 100%;
+          height: 20%;
+          text-align: center;
+          vertical-align: middle;
+          line-height: 50px;
+          cursor: pointer; }
+
 html,
 body {
   height: 100%; }
@@ -391,6 +512,6 @@ body {
   margin: 0px;
   height: 100%; }
 
-@media only screen and (min-width: 0px) and (max-width: 767px) {
+@media only screen and (min-width: 0px) and (max-width: 991px) {
   .container-fluid {
-    height: 1200px; } }
+    height: 1700px; } }

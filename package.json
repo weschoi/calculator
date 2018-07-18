@@ -6,7 +6,7 @@
   "scripts": {
     "heroku-postbuild": "webpack -p",
     "build": "webpack -d --watch",
-    "start-nodemon": "nodemon server/index.js",
+    "start": "nodemon server/index.js",
     "sass": "sass --watch dist/css"
   },
   "author": "Wesley Choi",

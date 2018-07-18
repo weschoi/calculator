@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sexy from './components/Sexy.jsx';
-import Nerdy from './components/Nerdy.jsx';
+import { Mobile, Desktop, Physical } from './components';
 
 ReactDOM.render(
   <div className="row no-gutters">
-    <Sexy />
-    <Nerdy />
+    <Mobile />
+    <Desktop />
+    <Physical />
   </div>, 
   document.getElementById('app'));

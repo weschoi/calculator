@@ -10,6 +10,19 @@ $dark-blue: #17122c;
 $gradient-1: #b156f2;
 $gradient-2: #795ae1;
 
+@mixin display($direction, $x, $y) {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $x;
+  align-items: $y;
+}
+
+@mixin width_height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -34,71 +47,56 @@ $gradient-2: #795ae1;
 }
 
 /* -------------------------------------------------------------------------- */
-/* Sexy!
+/* mobile!
 /* -------------------------------------------------------------------------- */
 
-.sexy {
+.mobile {
   background-image: linear-gradient(60deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
   padding: 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display (row, center, center);
   @include unselectable();
 
   > div {
-
-    display: flex;
-    width: 230px;
-    height: 470px;
-    border: 3px solid white;
+    @include width_height(230px, 470px);
+    @include display(column, center, center);
     @include border-radius(26px);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: flex;
+    border: 3px solid white;
     background: $iphone-bg;
     box-shadow: 5px 5px 15px 0px #2cacd1*0.7;
 
     .iphone-section-1 {
-      height: 80px;
-      width: 205px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include width_height(205px, 80px);
+      @include display(row, center, center);
 
       > div {
         background: $iphone-features;
       }
 
       .long-rectangle {
-        width: 50px;
-        height: 6px;
+        @include width_height(50px, 6px);
         margin: 0 5px;
         margin-left: 23px;
         @include border-radius(7px);
       }
 
       .short-rectangle {
-        width: 6px;
-        height: 6px;
+        @include width_height(6px, 6px);
         margin: 0 5px;
         @include border-radius(7px);
       }
     }
 
     .iphone-section-3 {
-      height: 80px;
-      width: 205px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include width_height(205px, 80px);
+      @include display(row, center, center);
     }
 
     .iphone-section-2 {
       color: white;
       font-family: 'Roboto', sans-serif;
       font-weight: 200;
-      height: 370px;
-      width: 205px;
+      @include width_height(205px, 370px);
       text-align: center;
 
       > div {
@@ -133,16 +131,14 @@ $gradient-2: #795ae1;
             display: flex;
 
             .signal-circles-container {
+              @include width_height(45%, 100%);
               display: flex;
               flex-direction: row;
-              width: 45%;
-              height: 100%;
               margin-left: 5px;
               justify-content: space-around;
 
               [class*="signal-circle-"] {
-                width: 4px;
-                height: 4px;
+                @include width_height(4px, 4px);
                 background: white;
                 border: 1px solid white;
                 @include border-radius(10px);
@@ -155,9 +151,8 @@ $gradient-2: #795ae1;
 
             .wifi {
               @extend .icon;
+              @include width_height(50%, 40%);
               margin-left: 3px;
-              height: 40%;
-              width: 50%;
               background: url('../img/wifi.png') no-repeat;
               background-size: contain;
             }
@@ -179,8 +174,7 @@ $gradient-2: #795ae1;
 
             .bluetooth-icon {
               @extend .icon;
-              height: 44%;
-              width: 11%;
+              @include width_height(11%, 44%);
               background: url('../img/bluetooth.png') no-repeat;
               background-size: contain;
               margin-left: 3px;
@@ -189,8 +183,7 @@ $gradient-2: #795ae1;
 
             .battery-icon {
               @extend .icon;
-              height: 44%;
-              width: 20%;
+              @include width_height(20%, 44%);
               background: url('../img/battery.png') no-repeat;
               background-size: contain;
               margin-right: 3px;
@@ -209,8 +202,7 @@ $gradient-2: #795ae1;
           height: 15%;
 
           > div {
-            height: 100%;
-            width: 25%;
+            @include width_height(25%, 100%);
           }
 
           .previous-record {
@@ -231,10 +223,8 @@ $gradient-2: #795ae1;
         display: flex;
 
         .history-1 {
-          display: flex;
+          @include display(row, flex-start, center);
           flex: 1;
-          align-items: center;
-          justify-content: flex-start;
 
           span {
             font-weight: 400;
@@ -299,12 +289,12 @@ $gradient-2: #795ae1;
             color: $sand;
           }
 
-          .sexy-button-equal {
+          .mobile-button-equal {
             width: 50%;
             background-color: $sand;
           }
 
-          .sexy-button-equal:hover {
+          .mobile-button-equal:hover {
             background-color: $sand*1.3;
           }
         }      

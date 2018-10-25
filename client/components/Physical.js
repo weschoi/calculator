@@ -16,7 +16,12 @@ export default class Physical extends React.Component {
 
 
   handleClear() {
-    this.setState({end: false, record: '', result: '', view: ''});
+    this.setState({
+      end: false, 
+      record: '', 
+      result: '', 
+      view: ''
+    });
   }
 
   handleClickKnob() {
@@ -137,8 +142,8 @@ export default class Physical extends React.Component {
 
     return (
       <div className="col-12 col-lg physical">
-        <div className="physical-container">
-          <div className="braun" style={{marginBottom: '13px'}}></div>
+        <div className="container">
+          <div className="braun"></div>
           <div className="view-outer">
             <div className="view-inner">{view}</div>
           </div>
@@ -175,46 +180,46 @@ export default class Physical extends React.Component {
                 </svg>
               </div>
               <div className="switch-container" style={{alignItems: this.state.alignItems}} onClick={() => {this.handleClickKnob() }}>
-                <div className="knob" onClick={() => {this.handleClickKnob() }}>
+                <div className="switch" onClick={() => {this.handleClickKnob() }}>
                 </div>
               </div>
             </div>
           </div>
-          <div className="n-button-group">
+          <div className="button-container">
             <div>
-              <div>M+</div>
-              <div>M-</div>
-              <div>MR</div>
-              <div>MC</div>
-              <div>+/-</div>
+              <div className="button-operator">M+</div>
+              <div className="button-operator">M-</div>
+              <div className="button-operator">MR</div>
+              <div className="button-operator">MC</div>
+              <div className="button-operator">+/-</div>
             </div>
             <div>
-              <div onClick={() => {this.handleSquareRoot() }}>√</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('7') }}>7</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('8') }}>8</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('9') }}>9</div>
-              <div onClick={() => {this.handleClick('/') }}>/</div>
+              <div className="button-operator" onClick={() => {this.handleSquareRoot() }}>√</div>
+              <div className="button-number" onClick={() => {this.handleClick('7') }}>7</div>
+              <div className="button-number" onClick={() => {this.handleClick('8') }}>8</div>
+              <div className="button-number" onClick={() => {this.handleClick('9') }}>9</div>
+              <div className="button-operator" onClick={() => {this.handleClick('/') }}>/</div>
             </div>
             <div>
-              <div>%</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('4') }}>4</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('5') }}>5</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('6') }}>6</div>
-              <div onClick={() => {this.handleClick('*') }}>x</div>
+              <div className="button-operator">%</div>
+              <div className="button-number" onClick={() => {this.handleClick('4') }}>4</div>
+              <div className="button-number" onClick={() => {this.handleClick('5') }}>5</div>
+              <div className="button-number" onClick={() => {this.handleClick('6') }}>6</div>
+              <div className="button-operator" onClick={() => {this.handleClick('*') }}>x</div>
             </div>
             <div>
-              <div>1/x</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('1') }}>1</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('2') }}>2</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('3') }}>3</div>
-              <div onClick={() => {this.handleClick('-') }}>-</div>
+              <div className="button-operator">1/x</div>
+              <div className="button-number" onClick={() => {this.handleClick('1') }}>1</div>
+              <div className="button-number" onClick={() => {this.handleClick('2') }}>2</div>
+              <div className="button-number" onClick={() => {this.handleClick('3') }}>3</div>
+              <div className="button-operator" onClick={() => {this.handleClick('-') }}>-</div>
             </div>
             <div>
-              <div onClick={() => {this.handleClear() }}>CE</div>
-              <div className="physical-button-2" onClick={() => {this.handleClick('0') }}>0</div>
-              <div onClick={() => {this.handleClick('.') }}>.</div>
-              <div className="physical-button-3" onClick={() => {this.handleEnter() }}>=</div>
-              <div onClick={() => {this.handleClick('+') }}>+</div>
+              <div className="button-operator" onClick={() => {this.handleClear() }}>CE</div>
+              <div className="button-number" onClick={() => {this.handleClick('0') }}>0</div>
+              <div className="button-number" onClick={() => {this.handleClick('.') }}>.</div>
+              <div className="button-equal" onClick={() => {this.handleEnter() }}>=</div>
+              <div className="button-operator" onClick={() => {this.handleClick('+') }}>+</div>
             </div>
           </div>
         </div>

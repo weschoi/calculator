@@ -1,0 +1,154 @@
+@import "util";
+
+$background: #a89e87;
+$calculator-background: #2c2725;
+
+$button-1: #bab59f;
+$button-2: #46372d;
+
+$salmon: #fd6433;
+$mint: #76af87;
+
+.physical {
+  @include display(row, center, center);
+  @include unselectable();
+
+  background-color: $background;
+  font-family: 'Aldrich', sans-serif;
+
+  > .container {
+    @include display(column, center, center);
+    @include width_height(310px, 470px);
+    @include border-radius(10px);
+    
+    margin: 0px;
+    padding: 0px;
+
+    background-color: $calculator-background;
+    box-shadow: 0px 10px $calculator-background*1.9;
+
+    > div {
+      width: 80%;
+    }
+
+    .braun {
+      height: 18px;
+      background: url('../img/Braun.png') no-repeat;
+      background-size: contain;
+      margin-bottom: 13px;
+    }
+    
+    .view-outer {
+      @include display(column, center, center);
+      @include border-radius(4px);
+
+      height: 66px;
+      background-color: $button-2;
+
+      .view-inner {
+        @include width_height(223px, 46px);
+        @include border-radius(4px);
+        
+        background-color: $button-1;
+        color: $button-2;
+
+        padding: 0px 10px;
+        
+        font-weight: 700;
+        font-size: 24px;
+        text-align: right;
+        line-height: 51px;
+      }
+    }
+    
+    .dots {
+      @include width_height(80%, 10%);
+      @include display(row, center, stretch);
+
+      [class*="dots-col-"] {
+        @include display(column, center, center);
+        flex: 1;
+      }
+
+      .dots-col-6 {
+        @include display(row, center, center);
+
+        > div {
+          margin: 1px;
+        }
+
+        .dot-series {
+          @include display(column, center, center);
+        }
+
+        .switch-container {
+          @include width_height(14px, 30px);
+          @include display(flex, center, flex-start);
+          @include border-radius(510px);
+
+          background: $button-2;
+  
+          > .switch {
+            @include width_height(14px, 14px);;
+            @include border-radius(1000px);
+            background: $salmon;
+          }
+        }
+      }
+
+    }
+
+    .button-container {
+      height: 55%;
+      @include display(column, space-between, space-between);
+
+      > div {
+        @include width_height(100%, 18%);
+        @include display(row, space-between, space-between);
+
+        > div {
+          @include width_height(18%, 100%);
+          @include border-radius(5px);
+
+          text-align: center;
+          vertical-align: middle;
+          line-height: 50px;
+
+          font-size: 12.5px;
+          font-weight: 500;
+          cursor: pointer;
+        }
+
+        > .button-operator {
+          background-color: $button-2;
+          color: white;
+        }
+
+        > .button-operator:active {
+          background: $button-2*0.85;
+          transform: translateY(3px);
+        }
+
+        .button-number {
+          background-color: $button-1;
+          color: $calculator-background;
+        }
+
+        .button-number:active {
+          background: $button-1*0.8;
+          transform: translateY(3px);
+        }
+
+        .button-equal {
+          background-color: $salmon;
+          color: white;
+        }
+
+        .button-equal:active {
+          background: $salmon*0.8;
+          transform: translateY(3px);
+        }
+      }
+    }
+  }
+}

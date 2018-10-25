@@ -100,11 +100,11 @@ export default class Mobile extends React.Component {
     return (
       <div className="col-12 col-lg mobile">
         <div>
-          <div className="iphone-section-1">
-            <div className="long-rectangle"></div>
-            <div className="short-rectangle"></div>
+          <div className="section-1">
+            <div className="rectangle-long"></div>
+            <div className="rectangle-short"></div>
           </div>
-          <div className="iphone-section-2">
+          <div className="section-2">
             <div className="view">
               <div className="view-header">
                 <div className="signal">
@@ -186,7 +186,7 @@ export default class Mobile extends React.Component {
               </div>
             </div>
           </div>
-          <div className="iphone-section-3">
+          <div className="section-3">
               <svg height="28" width="28">
                 <circle cx="14" cy="14" r="12" fill="#dcdfe6" stroke="#a1a5b3" strokeWidth="2" />
               </svg>

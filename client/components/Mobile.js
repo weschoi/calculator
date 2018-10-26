@@ -98,7 +98,7 @@ export default class Mobile extends React.Component {
 
   render() {
     return (
-      <div className="col-12 col-lg mobile">
+      <div className="mobile">
         <div>
           <div className="section-1">
             <div className="rectangle-long"></div>

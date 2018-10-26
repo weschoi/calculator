@@ -10,6 +10,7 @@ $salmon: #fd6433;
 $mint: #76af87;
 
 .physical {
+  @include width_height(100%, 100%);
   @include display(row, center, center);
   @include unselectable();
 

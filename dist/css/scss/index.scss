@@ -3,22 +3,10 @@
 @import "desktop";
 
 html,
-body {
-  height: 100%;
-}
-
-.container-fluid {
-  height: 100%;
-  padding: 0;
-}
-
-.row {
-  margin: 0px;
-  height: 100%;
-}
-
-@media only screen and (min-width: 0px) and (max-width: 991px) {
-  .container-fluid {
-    height: 1700px;
-  }
+body,
+.app, 
+.carousel, 
+.carousel-inner, 
+.carousel-item {
+  @include width_height(100%, 100%);
 }

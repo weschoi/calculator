@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css?family=Aldrich|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
 @import url("https://fonts.googleapis.com/css?family=Aldrich|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
 .mobile {
+  width: 100%;
+  height: 100%;
   display: -webkit-flex;
   /* Safari */
   -webkit-justify-content: center;
@@ -266,6 +268,8 @@
           background-color: #e5c498; }
 
 .physical {
+  width: 100%;
+  height: 100%;
   display: -webkit-flex;
   /* Safari */
   -webkit-justify-content: center;
@@ -459,6 +463,8 @@
   color: white; }
 
 .desktop {
+  width: 100%;
+  height: 100%;
   display: -webkit-flex;
   /* Safari */
   -webkit-justify-content: center;
@@ -587,17 +593,10 @@
           cursor: pointer; }
 
 html,
-body {
+body,
+.app,
+.carousel,
+.carousel-inner,
+.carousel-item {
+  width: 100%;
   height: 100%; }
-
-.container-fluid {
-  height: 100%;
-  padding: 0; }
-
-.row {
-  margin: 0px;
-  height: 100%; }
-
-@media only screen and (min-width: 0px) and (max-width: 991px) {
-  .container-fluid {
-    height: 1700px; } }

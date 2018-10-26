@@ -62,7 +62,7 @@ $gradient-2: #795ae1;
       @include display(column, stretch, stretch);
       
       font-family: 'Roboto', sans-serif;
-      font-weight: 200;
+      font-weight: 300;
       text-align: center;
 
       color: white;
@@ -78,36 +78,36 @@ $gradient-2: #795ae1;
 
         > div {
           width: 100%;
-          // width: 130px;
         }
 
         .view-header {
           height: 15px;
-          display: flex;
+          @include display(row, space-between, space-between);
+
+          margin-top: 1px;
 
           > div {
             flex: 1;
           }
 
-          .icon {
-            margin-top: -1px;
-          }
-
           .signal {
-            display: flex;
+            @include display(row, flex-start, center);
 
             .signal-circles-container {
-              @include width_height(45%, 100%);
-              display: flex;
-              flex-direction: row;
+              @include width_height(42%, 100%);
+              @include display(row, space-between, center);
+
               margin-left: 5px;
-              justify-content: space-around;
 
               [class*="signal-circle-"] {
                 @include width_height(4px, 4px);
-                background: white;
+                @include border-radius(4px);
+
                 border: 1px solid white;
-                @include border-radius(10px);
+              }
+
+              .signal-circle-1 {
+                background: white;
               }
 
               .signal-circle-2 {
@@ -116,8 +116,7 @@ $gradient-2: #795ae1;
             }
 
             .wifi {
-              @extend .icon;
-              @include width_height(50%, 40%);
+              @include width_height(20%, 45%);
               margin-left: 3px;
               background: url('../img/wifi.png') no-repeat;
               background-size: contain;
@@ -126,29 +125,25 @@ $gradient-2: #795ae1;
 
           .time {
             font-size: 7px;
-            font-weight: 300;
-            line-height: 5px;
+            font-weight: 400;
+            line-height: 17px;
           }
 
           .battery {
-            display: flex;
-            justify-content: flex-end;
+            @include display(row, flex-end, center);
 
             .battery-percent {
               @extend .time;
             }
 
             .bluetooth-icon {
-              @extend .icon;
               @include width_height(11%, 44%);
               background: url('../img/bluetooth.png') no-repeat;
               background-size: contain;
               margin-left: 3px;
-              opacity: 0.6;
             }
 
             .battery-icon {
-              @extend .icon;
               @include width_height(20%, 44%);
               background: url('../img/battery.png') no-repeat;
               background-size: contain;
@@ -158,92 +153,87 @@ $gradient-2: #795ae1;
         }
 
         .result {
-          height: 76px;
-          line-height: 73px;
+          height: 82px;
+          line-height: 90px;
           font-weight: 100;
           font-size: 40px;
         }
 
         .view-footer {
-          height: 19px;
+          height: 22px;
 
-          > div {
-            @include width_height(25%, 100%);
-          }
+          padding-right: 19px;
 
-          .previous-record {
-            float: right;
-            font-size: 10px;
-            line-height: 13px;
-            margin-right: 19px;
-            color: $gradient-1 * 1.5;
-            font-weight: 300;
-            text-align: right;
-          }
+          font-size: 10px;
+          color: $gradient-1 * 1.5;
+          font-weight: 300;
+          text-align: right;
+          line-height: 13px;
         }
       }
 
-      .history {
-        background-color: $dark-blue;
+      > .history {
         height: 30px;
-        display: flex;
+        @include display(row, center, space-between);
+        
+        background-color: $dark-blue;
+        border-bottom: 1px solid $button*1.35;
+          
+        > span {
+          flex: 3;
 
-        .history-1 {
-          @include display(row, flex-start, center);
-          flex: 1;
+          font-size: 9px;
+          font-weight: 400;
+          line-height: 29px;
+          text-align: left;
 
-          span {
-            font-weight: 400;
-            font-size: 9px;
-            line-height: 0px;
-            color: white*0.35;
-            margin-left: 15px;
-            transition-timing-function: ease;
-            transition: color 0.6s;
-            cursor: pointer;
-          }
+          color: white*0.35;
+          margin-left: 15px;
 
-          span:hover {
-            color: white*0.7;
-          }
+          transition-timing-function: ease;
+          transition: color 0.6s;
+          cursor: pointer;
         }
 
-        .history-2 {
-          flex: 1;
-          text-align: right;
+        > span:hover {
+          color: white*0.7;
+        }
+
           
-          #history-text {
-            font-size: 11px;
-            line-height: 29px;
-            margin-right: 20px;
+        > #history-text {
+          flex: 7;
+          
+          font-size: 11px;
+          font-weight: 300;
+          line-height: 29px;
+          text-align: right;
 
-            #num {
-              color: white;
-            }
+          margin-right: 20px;
 
-            #operator {
-              color: $button-sand;
-            }
+          #num {
+            color: white;
+          }
+
+          #operator {
+            color: $button-sand;
           }
         }
       }
 
       .button-group {
         height: 214px;
-
-        > div {
-          display: flex;
-          height: 20%;
+        @include display(row, flex-start, flex-start);
+        flex-wrap: wrap;
 
           > div {
-            width: 25%;
+            @include width_height(205px/4, 214px/5);
             background-color: $button;
             line-height: 41px;
             font-size: 11px;
+            border: 1px solid $button*1.35;
+
             transition-timing-function: ease;
             transition: background-color 1s;
-            border: 1px solid $button*1.35;
-            position: relative;
             cursor: pointer;
           }
 
@@ -256,14 +246,13 @@ $gradient-2: #795ae1;
           }
 
           .mobile-button-equal {
-            width: 50%;
+            flex: 2;
             background-color: $button-sand;
           }
 
           .mobile-button-equal:hover {
-            background-color: $button-sand*1.3;
+            background-color: $button-sand*1.15;
           }
-        }      
       }
     }
   }

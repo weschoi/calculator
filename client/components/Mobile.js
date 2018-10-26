@@ -132,58 +132,46 @@ export default class Mobile extends React.Component {
               </div>
 
               <div className="view-footer">
-                <div className="previous-record">
-                  {this.state.results[this.state.results.length-2] || ''}
-                </div>
+                {this.state.results[this.state.results.length-2] || ''}
               </div>
             </div>
 
             <div className="history">
-              <div className="history-1">
-                <span onClick={() => {this.handleClear() }}>delete</span>
-              </div>
-              <div className="history-2">
-                <span id="history-text">{
-                  this.handleRecord().map((current, index) => {
-                    if (index === 0 || index % 2 === 0) {
-                      return <span id="num" key={index}>{`${current} `}</span>
-                    } else {
-                      return <span id="operator" key={index}>{`${current} `}</span>
-                    }
-                  })
-                }</span>
-              </div>
+              <span onClick={() => {this.handleClear() }}>delete</span>
+              <span id="history-text">{
+                this.handleRecord().map((current, index) => {
+                  if (index === 0 || index % 2 === 0) {
+                    return <span id="num" key={index}>{`${current} `}</span>
+                  } else {
+                    return <span id="operator" key={index}>{`${current} `}</span>
+                  }
+                })
+              }</span>
             </div>
             <div className='button-group'>
-              <div>
-                <div className="operator" onClick={() => this.handleClearResults()} style={{fontWeight: 300}}>C</div>
-                <div onClick={() => {this.handleClick('-') }} className="operator">+/-</div>
-                <div onClick={() => {this.handleClick(' % ')}} className="operator">%</div>
-                <div onClick={() => {this.handleClick(' / ') }} className="operator">/</div>
-              </div>
-              <div>
-                <div onClick={() => {this.handleClick('7') }}>7</div>
-                <div onClick={() => {this.handleClick('8') }}>8</div>
-                <div onClick={() => {this.handleClick('9') }}>9</div>
-                <div onClick={() => {this.handleClick(' * ') }} className="operator">x</div>
-              </div>
-              <div>
-                <div onClick={() => {this.handleClick('4') }}>4</div>
-                <div onClick={() => {this.handleClick('5') }}>5</div>
-                <div onClick={() => {this.handleClick('6') }}>6</div>
-                <div onClick={() => {this.handleClick(' - ') }} className="operator">–</div>
-              </div>
-              <div>
-                <div onClick={() => {this.handleClick('1') }}>1</div>
-                <div onClick={() => {this.handleClick('2') }}>2</div>
-                <div onClick={() => {this.handleClick('3') }}>3</div>
-                <div onClick={() => {this.handleClick(' + ') }} className="operator">+</div>
-              </div>
-              <div>
-                <div onClick={() => {this.handleClick('.') }}>.</div>
-                <div onClick={() => {this.handleClick('0') }}>0</div>
-                <div className="mobile-button-equal" onClick={() => {this.handleEnter()}}>=</div>
-              </div>
+              <div onClick={() => this.handleClearResults()} className="operator" style={{fontWeight: 500}}>C</div>
+              <div onClick={() => {this.handleClick('-') }} className="operator">+/-</div>
+              <div onClick={() => {this.handleClick(' % ')}} className="operator">%</div>
+              <div onClick={() => {this.handleClick(' / ') }} className="operator">/</div>
+
+              <div onClick={() => {this.handleClick('7') }}>7</div>
+              <div onClick={() => {this.handleClick('8') }}>8</div>
+              <div onClick={() => {this.handleClick('9') }}>9</div>
+              <div onClick={() => {this.handleClick(' * ') }} className="operator">x</div>
+
+              <div onClick={() => {this.handleClick('4') }}>4</div>
+              <div onClick={() => {this.handleClick('5') }}>5</div>
+              <div onClick={() => {this.handleClick('6') }}>6</div>
+              <div onClick={() => {this.handleClick(' - ') }} className="operator">–</div>
+
+              <div onClick={() => {this.handleClick('1') }}>1</div>
+              <div onClick={() => {this.handleClick('2') }}>2</div>
+              <div onClick={() => {this.handleClick('3') }}>3</div>
+              <div onClick={() => {this.handleClick(' + ') }} className="operator">+</div>
+
+              <div onClick={() => {this.handleClick('.') }}>.</div>
+              <div onClick={() => {this.handleClick('0') }}>0</div>
+              <div className="mobile-button-equal" onClick={() => {this.handleEnter()}}>=</div>
             </div>
           </div>
           <div className="section-3">

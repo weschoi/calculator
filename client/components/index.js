@@ -1,9 +1,11 @@
+import Carousel from './Carousel';
+import Physical from './Physical';
 import Mobile from './Mobile';
 import Desktop from './Desktop';
-import Physical from './Physical';
 
 export {
+    Carousel,
+    Physical,
     Mobile,
-    Desktop,
-    Physical
+    Desktop
 }

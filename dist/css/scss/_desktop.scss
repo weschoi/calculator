@@ -7,6 +7,7 @@ $teal: #00e3cb;
 }
 
 .desktop {
+    @include width_height(100%, 100%);
     @include display(column, center, center);
     @include unselectable();
     background: url('../img/sierra.jpg') center center no-repeat;
@@ -90,7 +91,7 @@ $teal: #00e3cb;
 
                 > div {
                     @include width_height(100%, 20%);
-                    
+
                     color: white;
                     text-align: center;
                     vertical-align: middle;

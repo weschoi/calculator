@@ -11,6 +11,7 @@ $gradient-1: #b156f2;
 $gradient-2: #795ae1;
 
 .mobile {
+  @include width_height(100%, 100%);
   @include display(column, center, center);
   @include unselectable();
 

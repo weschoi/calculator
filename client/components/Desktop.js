@@ -14,7 +14,7 @@ export default class Desktop extends React.Component {
 
   render() {
     return (
-      <div className="col-12 col-lg desktop">
+      <div className="desktop">
         <div className="desktop-container">
 
           <div className="dots-container">

@@ -141,7 +141,7 @@ export default class Physical extends React.Component {
     let view = (this.state.show === 'number') ? this.state.view : this.state.result;
 
     return (
-      <div className="col-12 col-lg physical">
+      <div className="physical">
         <div className="container">
           <div className="braun"></div>
           <div className="view-outer">

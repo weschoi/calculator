@@ -10,3 +10,5 @@ body,
 .carousel-item {
   @include width_height(100%, 100%);
 }
+
+@import "_media-mobile.scss";

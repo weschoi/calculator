@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Aldrich|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Questrial');
 
 @mixin display($direction, $x, $y) {
     display: -webkit-flex; /* Safari */
@@ -36,6 +37,36 @@
     background: -o-linear-gradient($gradient-1, $gradient-2); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient($gradient-1, $gradient-2); /* For Firefox 3.6 to 15 */
     background: linear-gradient($degree, $gradient-1, $gradient-2); /* Standard syntax */
+}
+
+@font-face {
+    font-family: "SF-Pro-Text-Bold";
+    src: url(fonts/SF-Pro-Text-Bold.otf);
+}
+
+@font-face {
+    font-family: "SF-Pro-Text-Heavy";
+    src: url(fonts/SF-Pro-Text-Heavy.otf);
+}
+
+@font-face {
+    font-family: "SF-Pro-Text-Light";
+    src: url(fonts/SF-Pro-Text-Light.otf);
+}
+
+@font-face {
+    font-family: "SF-Pro-Text-Medium";
+    src: url(fonts/SF-Pro-Text-Medium.otf);
+}
+
+@font-face {
+    font-family: "SF-Pro-Text-Regular";
+    src: url(fonts/SF-Pro-Text-Regular.otf);
+}
+
+@font-face {
+    font-family: "SF-Pro-Text-Semibold";
+    src: url(fonts/SF-Pro-Text-Semibold.otf);
 }
 
 // .container-fluid {

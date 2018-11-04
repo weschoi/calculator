@@ -1,0 +1,84 @@
+@import "util";
+
+$gray: rgb(161, 165, 179);
+$black: rgb(8,8,8);
+$green: rgb(115,227,149);
+$yellow: rgb(254,245,49);
+$gray-letters: rgb(118, 119, 121);
+$button: rgb(23,26,34);
+
+.tablet {
+    @include width_height(100%, 100%);
+    @include display(row, center, center);
+    @include unselectable();
+    background: url('../img/big.jpeg') center center no-repeat;
+
+    .tablet-container {
+        @include width_height(320px, 470px);
+        @include display(column, center, center);
+        @include border-radius(14px);
+
+        box-shadow: 0px 0px 15px 0px white*0.4;
+        background: white;
+
+        // margin-right: 50px;
+        font-family: 'Questrial', sans-serif;
+
+        > .dot {
+            @include display(row, center, center);
+            @include width_height(100%, 7%);
+
+            > div {
+                @include width_height(7px, 7px);
+                @include border-radius(7px);
+                background-color: $gray;
+            }
+        }
+        
+        > .tablet-container-inner {
+            @include width_height(91%, 84%);
+            @include display(column, center, center);
+
+            background: $black;
+
+            > .results {
+                @include width_height(100%, 33%);
+                @include display(column, center, center);
+            }
+
+            > .buttons-container {
+                @include width_height(95%, 67%);
+                @include display(row, flex-start, flex-start);
+                flex-wrap: wrap;
+                background-color: $button;
+
+                > span {
+                    @include width_height(25%, 100%/6);
+                    font-size: 14px;
+                    color: $gray-letters;
+                    text-align: center;
+                    line-height: 43px;
+                }
+
+                > span.op {
+                    color: $green;
+                }
+            }
+        }
+
+        > .home {
+            @include display(row, center, center);
+            @include width_height(100%, 9%);
+        }
+    }
+
+    .stylus {
+        display: none;
+        
+        @include width_height(22px, 320px);
+        background: white;
+        box-shadow: 0px 0px 15px 0px white*0.4;
+
+        margin-left: 50px;
+    }
+}

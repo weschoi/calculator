@@ -8,18 +8,133 @@ $teal: #00e3cb;
 
 .desktop {
     @include width_height(100%, 100%);
-    @include display(column, center, center);
+    @include display(column, space-between, center);
     @include unselectable();
     background: url('../img/sierra.jpg') center center no-repeat;
 
-    .desktop-container {
+    font-size: 15px;
+
+    > .nav {
+        @include width_height(100%, 23px);
+        @include display(row, center, stretch);
+
+        background: rgba(white, 0.92);
+        box-shadow: 0px 0px 45px 0px white*0.4;
+
+        padding: 0px 25px 0px 20px;
+
+        > .left {
+            flex: 1;
+            @include display(row, flex-start, center);
+
+            > div:first-child {
+                @include width_height(18px, 18px);
+
+                background: url('../img/apple-logo.png') no-repeat center center;
+                background-size: contain;
+
+                margin-bottom: 1px;
+            }
+
+            > span:nth-child(2) {
+                font-family: 'SF-Pro-Text-Bold', sans-serif;
+                letter-spacing: -0.5px;
+                margin-left: 18px;
+            }
+
+            > span {
+                font-family: 'SF-Pro-Text-Regular', sans-serif;
+                letter-spacing: -0.5px;
+                margin-left: 18px;
+            }
+        }
+
+        > .right {
+            flex: 1;
+            @include display(row, flex-end, center);
+
+            > div:first-child,
+            > div:nth-child(2),
+            > div:nth-child(4),
+            > div:nth-child(5) {
+                @include width_height(18px, 18px);
+                margin-right: 13px;
+            }
+
+            > div:first-child {
+                @include width_height(19px, 19px);
+
+                background: url('../img/black-wifi.png') no-repeat center center;
+                background-size: contain;
+            }
+
+            > div:nth-child(2) {
+                @include width_height(22px, 22px);
+                
+                background: url('../img/black-battery.png') no-repeat center center;
+                background-size: contain;
+            }
+
+            > span {
+                font-family: 'SF-Pro-Text-Regular', sans-serif;
+                letter-spacing: -0.5px;
+                margin-right: 13px;
+            }
+
+            > div:nth-child(4) {
+                @include width_height(16px, 16px);
+
+                background: url('../img/black-search.png') no-repeat center center;
+                background-size: contain;
+            }
+
+            > div:nth-child(5) {
+                @include width_height(20px, 20px);
+
+                background: url('../img/black-siri-2.png') no-repeat center center;
+                background-size: contain;
+            }
+
+            > div:nth-child(6) {
+                @include width_height(18px, 10px);
+                @include display(column, space-between, space-between);
+
+                > div {
+                    @include width_height(100%, 2px);
+                    @include display(row, space-between, center);
+                    
+                    > div:first-child {
+                        @include width_height(2px, 2px);
+                        background: black;
+                    }
+                    
+                    > div:nth-child(2) {
+                        @include width_height(14px, 2px);
+                        background: black;
+                    }
+                    
+                    > div.short {
+                        @include width_height(11px, 2px);
+                        margin-right: 3px;
+                        background: black;
+                    }
+                }
+
+            }
+        }
+    }
+
+    > .desktop-container {
         @include width_height(270px, 480px);
         @include display(column, center, center);
         @include border-radius(10px);
 
+        margin-top: 28px;
         padding: 0 20px 20px 7px;
         box-shadow: 0px 0px 15px 0px white*0.4;
         background: rgba(white, 0.94);
+
+        // overflow: hidden;
 
         > .dots-container {
             @include display(row, flex-start, center);
@@ -29,25 +144,100 @@ $teal: #00e3cb;
 
             > div {
                 @include width_height(11px, 11px);
-                @include border-radius(11px);
+                @include display(row, center, center);
+                @include border-radius(15px);
                 margin-right: 7px;
             }
 
             > div:first-child {
                 background-color: #ff605d;
+                border: 1px solid rgb(224, 95, 83);
+
+                svg {
+                    rect {
+                        opacity: 0;
+                        fill: rgb(92, 18, 13);
+                        transition: 0.1s;
+                    }
+                }
             }
 
             > div:nth-child(2) {
                 background-color: #ffbe46;
+                border: 1px solid rgb(231, 179, 74);
+
+                svg {
+                    rect {
+                        opacity: 0;
+                        fill: rgb(144, 89, 29);
+                        transition: 0.1s;
+                    }
+                }
             }
 
             > div:last-child {
                 background-color: #00c94d;
+                border: 1px solid rgb(93, 185, 77);
+
+                svg {
+                    polygon {
+                        opacity: 0;
+                        fill: rgb(42,97,24);
+                        transition: 0.1s;
+                    }
+                }
+            }
+
+            > div:first-child:hover {
+                svg {
+                    rect {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            > div:nth-child(2):hover {
+                svg {
+                    rect {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            > div:last-child:hover {
+                svg {
+                    polygon {
+                        opacity: 1;
+                    }
+                }
             }
         }        
 
         > .results {
             @include width_height(100%, 27%);
+            // @include width_height(100%, 150px);
+            @include display(column, flex-end, flex-end);
+
+            overflow: hidden;
+
+            // border: 1px solid blue;
+            padding: 10px 0;
+
+            > span {
+                @include width_height(100%, 22px);
+                text-align: right;
+                // border: 1px solid red;
+                font-size: 12px;
+                color: gray;
+            }
+
+            > .activeButton {
+                @include width_height(100%, 40px);
+                text-align: right;
+                // border: 1px solid green;
+                font-size: 30px;
+                color: black;
+            }
         }
 
         > .buttons-container {
@@ -59,6 +249,7 @@ $teal: #00e3cb;
             }
 
             > .number-container {
+
                 width: 82%;
                 @include display(row, flex-start, flex-start);
                 padding-left: 6px;
@@ -67,19 +258,64 @@ $teal: #00e3cb;
 
                 > div {
                     @include width_height(100%/3, 20%);
-                    text-align: center;
-                    vertical-align: middle;
-                    line-height: 53px;
-                    cursor: pointer;
+                    padding: 8px 8px;
+
+                    > div {
+                        text-align: center;
+                        vertical-align: middle;
+                        line-height: 40px;
+                        cursor: pointer;
+    
+                        // border: 2px solid red;
+                        @include border-radius(100px);
+
+                        transition: .1s;
+
+                        border: 2px solid rgba($teal, 0);
+                    }
+
+                    > div:hover {
+                        border: 2px solid rgba($teal, 0.25);
+                        line-height: 40px;
+                    }
+
+                    > div:active{
+                        border: 2px solid rgba($teal, 0.8);
+                        line-height: 40px;
+                    }
                 }
 
                 > div:first-child {
-                    @include border-radius(50px);
 
-                    background-color: $teal;
-                    color: white;
-                    line-height: 57px;
+                    padding: 6px 10px;
+
+                    > div {
+
+                        @include border-radius(50px);
+    
+                        font-size: 17px;
+                        background-color: $teal;
+                        color: white;
+                        font-weight: 500;
+                        line-height: 37px;
+
+                        border: 2px solid rgba($teal, 0);
+                    }
+
+                    > div:hover {
+                        // border: none;
+                        border: 2px solid rgba($teal, 0);
+                    }
+                    
                 }
+
+                > div:nth-child(2),
+                > div:nth-child(3) {
+                    color: gray;
+                }
+
+
+
             }
 
             > .operator-container {
@@ -101,4 +337,34 @@ $teal: #00e3cb;
             }
         }
     }
+
+    > .dock {
+        @include width_height(200px, 70px);
+        @include display(row, center, stretch);
+
+        background: rgba(white, 0.76);
+        border-radius: 5px 5px 0 0;
+        padding: 8px 0px;
+        
+        > div:first-child {
+            background: url('../img/calculator-icon.png') center center no-repeat;
+            background-size: contain;
+        }
+
+        > div:nth-child(2) {
+            width: 1px;
+            background: rgba(black, .25);
+        }
+        
+        > div:nth-child(3) {
+            background: url('../img/trashempty.ico') center center no-repeat;
+            background-size: contain;  
+        }
+
+        > div:first-child,
+        > div:nth-child(3) {
+            width: 98px;
+        }
+    }
+
 }

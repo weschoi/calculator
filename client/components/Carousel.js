@@ -1,5 +1,5 @@
 import React from 'react';
-import { Physical, Mobile, Desktop } from '.'
+import { Physical, Mobile, Desktop, Tablet } from '.'
 
 export default class Carousel extends React.Component {
   
@@ -11,12 +11,14 @@ export default class Carousel extends React.Component {
           <li data-target="#demo" data-slide-to="0" className="active"></li>
           <li data-target="#demo" data-slide-to="1"></li>
           <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
         </ul>
     
         <div className="carousel-inner">
           <div className="carousel-item active"><Physical></Physical></div>
           <div className="carousel-item"><Mobile></Mobile></div>
           <div className="carousel-item"><Desktop></Desktop></div>
+          <div className="carousel-item"><Tablet></Tablet></div>
         </div>
     
         <a className="carousel-control-prev" href="#demo" role="button" data-slide="prev">

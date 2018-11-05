@@ -764,13 +764,15 @@
         height: 22px;
         text-align: right;
         font-size: 12px;
-        color: gray; }
+        color: gray;
+        font-weight: 400; }
       .desktop > .desktop-container > .results > .activeButton {
         width: 100%;
         height: 40px;
         text-align: right;
         font-size: 30px;
-        color: black; }
+        color: #4c4c4c;
+        font-weight: 300; }
     .desktop > .desktop-container > .buttons-container {
       width: 100%;
       height: 65%;
@@ -857,7 +859,7 @@
           color: white;
           text-align: center;
           vertical-align: middle;
-          line-height: 50px;
+          line-height: 57px;
           cursor: pointer; }
   .desktop > .dock {
     width: 200px;
@@ -927,7 +929,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: url("../img/big.jpeg") center center no-repeat; }
+  background: url("../img/b-4.jpeg") center center no-repeat; }
   .tablet .tablet-container {
     width: 320px;
     height: 470px;
@@ -987,7 +989,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        color: gray; }
       .tablet .tablet-container > .tablet-container-inner > .buttons-container {
         width: 95%;
         height: 67%;

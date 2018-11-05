@@ -11,7 +11,7 @@ $button: rgb(23,26,34);
     @include width_height(100%, 100%);
     @include display(row, center, center);
     @include unselectable();
-    background: url('../img/big.jpeg') center center no-repeat;
+    background: url('../img/b-4.jpeg') center center no-repeat;
 
     .tablet-container {
         @include width_height(320px, 470px);
@@ -44,6 +44,8 @@ $button: rgb(23,26,34);
             > .results {
                 @include width_height(100%, 33%);
                 @include display(column, center, center);
+
+                color: gray;
             }
 
             > .buttons-container {

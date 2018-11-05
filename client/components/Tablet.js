@@ -38,12 +38,14 @@ export default class Tablet extends React.Component {
             { this.handleDot() }
 
             <div className="tablet-container-inner">
-                <div className="results"></div>
+                <div className="results">
+                  coming soon :)
+                </div>
                 <div className="buttons-container">
                     <span>+/-</span>
                     <span>(</span>
                     <span>)</span>
-                    <span>&#247;</span>
+                    <span style={{'fontSize': '10.5px'}}>delete</span>
 
                     <span>7</span>
                     <span>8</span>
@@ -65,9 +67,9 @@ export default class Tablet extends React.Component {
                     <span>%</span>
                     <span className="op">+</span>
 
-                    <span>ss</span>
-                    <span>ss</span>
-                    <span>ss</span>
+                    <span>.</span>
+                    <span>..</span>
+                    <span>...</span>
                     <span>=</span>
                 </div>
             </div>

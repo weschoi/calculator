@@ -239,7 +239,10 @@ $teal: #00e3cb;
                 font-size: 30px;
                 color: #4c4c4c;
                 font-weight: 300;
+            }
 
+            > .equal {
+                color: $teal;
             }
         }
 
@@ -273,7 +276,6 @@ $teal: #00e3cb;
                         @include border-radius(100px);
 
                         transition: .1s;
-
                         border: 2px solid rgba($teal, 0);
                     }
 

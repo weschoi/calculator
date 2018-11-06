@@ -773,6 +773,8 @@
         font-size: 30px;
         color: #4c4c4c;
         font-weight: 300; }
+      .desktop > .desktop-container > .results > .equal {
+        color: #00e3cb; }
     .desktop > .desktop-container > .buttons-container {
       width: 100%;
       height: 65%;
@@ -990,7 +992,37 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-right: 12px;
         color: gray; }
+        .tablet .tablet-container > .tablet-container-inner > .results > div {
+          display: -webkit-flex;
+          /* Safari */
+          -webkit-justify-content: flex-end;
+          /* Safari 6.1+ */
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center; }
+          .tablet .tablet-container > .tablet-container-inner > .results > div > span {
+            text-align: right; }
+        .tablet .tablet-container > .tablet-container-inner > .results > div.result {
+          width: 100%;
+          height: 70%; }
+          .tablet .tablet-container > .tablet-container-inner > .results > div.result > span {
+            font-size: 47px;
+            color: #73e395;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300; }
+        .tablet .tablet-container > .tablet-container-inner > .results > div.record {
+          width: 100%;
+          height: 30%; }
+          .tablet .tablet-container > .tablet-container-inner > .results > div.record > span {
+            margin-right: 4px;
+            font-size: 18px; }
+          .tablet .tablet-container > .tablet-container-inner > .results > div.record > span#op {
+            color: #73e395; }
+          .tablet .tablet-container > .tablet-container-inner > .results > div.record > span#num {
+            color: #cccccc; }
       .tablet .tablet-container > .tablet-container-inner > .buttons-container {
         width: 95%;
         height: 67%;
@@ -1010,9 +1042,55 @@
           font-size: 14px;
           color: #767779;
           text-align: center;
-          line-height: 43px; }
+          line-height: 43px;
+          border: 0px solid #171a22;
+          transition: 0.1s; }
+        .tablet .tablet-container > .tablet-container-inner > .buttons-container > span:hover {
+          border: 2px solid #020303;
+          line-height: 38px;
+          font-size: 17px;
+          color: white; }
         .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.op {
           color: #73e395; }
+        .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.delete {
+          display: -webkit-flex;
+          /* Safari */
+          -webkit-justify-content: center;
+          /* Safari 6.1+ */
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center; }
+        .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.hexagon {
+          display: -webkit-flex;
+          /* Safari */
+          -webkit-justify-content: center;
+          /* Safari 6.1+ */
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center; }
+          .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.hexagon svg path {
+            stroke: #767779;
+            fill: none;
+            stroke-width: 1.5; }
+          .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.hexagon svg circle {
+            fill: #767779; }
+          .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.hexagon svg:hover path {
+            stroke-width: 0;
+            fill: #767779; }
+          .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.hexagon svg:hover circle {
+            fill: white; }
+        .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.equal svg path {
+          stroke: #73e395;
+          fill: none;
+          stroke-width: 1.5; }
+        .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.equal svg rect {
+          fill: #73e395; }
+        .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.equal svg:hover path {
+          fill: #73e395; }
+        .tablet .tablet-container > .tablet-container-inner > .buttons-container > span.equal svg:hover rect {
+          fill: white; }
     .tablet .tablet-container > .home {
       display: -webkit-flex;
       /* Safari */
@@ -1024,6 +1102,10 @@
       align-items: center;
       width: 100%;
       height: 9%; }
+      .tablet .tablet-container > .home svg circle {
+        stroke: #a1a5b3;
+        stroke-width: 3;
+        fill: white; }
   .tablet .stylus {
     display: none;
     width: 22px;

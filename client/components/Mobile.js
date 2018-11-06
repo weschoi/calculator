@@ -138,15 +138,17 @@ export default class Mobile extends React.Component {
 
             <div className="history">
               <span onClick={() => {this.handleClear() }}>delete</span>
-              <span id="history-text">{
-                this.handleRecord().map((current, index) => {
-                  if (index === 0 || index % 2 === 0) {
-                    return <span id="num" key={index}>{`${current} `}</span>
-                  } else {
-                    return <span id="operator" key={index}>{`${current} `}</span>
-                  }
-                })
-              }</span>
+              <span id="history-text">
+                {
+                  this.handleRecord().map((current, index) => {
+                    if (index === 0 || index % 2 === 0) {
+                      return <span id="num" key={index}>{`${current} `}</span>
+                    } else {
+                      return <span id="operator" key={index}>{`${current} `}</span>
+                    }
+                  })
+                }
+              </span>
             </div>
             <div className='button-group'>
               <div onClick={() => this.handleClearResults()} className="operator" style={{fontWeight: 500}}>C</div>

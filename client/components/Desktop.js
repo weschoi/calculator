@@ -9,7 +9,9 @@ export default class Desktop extends React.Component {
       day: '',
       record: '',
       recordArr: [],
-      clearEvents: 0
+      clearEvents: 0,
+      equalMode: false,
+      decimalMode: false,
       // result: ''
     }
   }
@@ -48,13 +50,52 @@ export default class Desktop extends React.Component {
 
     var lengthArr = this.state.recordArr.length;
     var lengthStr = this.state.record.length;
+    var equalMode = this.state.equalMode;
 
-    let numArr = ['blank', '1','2','3','4','5','6','7','8','9','0'];
-    
-    this.setState({
-      record: this.state.record += num,
-      clearEvents: 0
-    });
+    let numArr = ['blank', '1','2','3','4','5','6','7','8','9','0','.'];
+    let opArr = ['blank', '+', '-', '*', '/'];
+
+    if (equalMode) {
+
+      if (opArr.indexOf(num) > 0) {
+
+        this.setState({
+          record: this.state.record += num,
+          clearEvents: 0,
+          equalMode: false
+        });
+
+      } else {
+
+        if (num === '.') {
+
+          this.setState({
+            record: this.state.record + '.',
+            clearEvents: 0,
+            equalMode: false
+          })
+          
+        } else {
+
+          this.setState({
+            record: num,
+            clearEvents: 0,
+            equalMode: false
+          })
+          
+        }
+      }
+
+    } else {
+
+      this.setState({
+        record: this.state.record += num,
+        clearEvents: 0,
+        equalMode: false
+      });
+
+    }
+
 
     var previousButtonWasNumber = numArr.indexOf(this.state.record[lengthStr-1]) > 0;
     var currentButtonIsNumber = numArr.indexOf(num) > 0;
@@ -82,12 +123,23 @@ export default class Desktop extends React.Component {
       this.setState({
         record: '',
         recordArr: [],
-        clearEvents: 0
+        clearEvents: 0,
+        equalMode: false
       })
     } else {
       this.state.clearEvents++;
 
-      let newRecordArr = this.state.recordArr.slice(0, recordArrLength - 1);
+      if (this.state.recordArr[recordArrLength - 2] === '=') {
+        var newRecordArr = this.state.recordArr.slice(0, recordArrLength - 2);
+        newRecordArr.push('');
+
+        this.setState({
+          record: ''
+        });
+
+      } else {
+        var newRecordArr = this.state.recordArr.slice(0, recordArrLength - 1);
+      }
 
       this.setState({
         recordArr: newRecordArr
@@ -101,10 +153,14 @@ export default class Desktop extends React.Component {
   }
 
   handleEnter() {
+    let result = eval(this.state.record).toString().slice(0, 12);
 
-    let result = eval(this.state.record);
+    this.setState({
+      record: result, 
+      clearEvents: 0,
+      equalMode: true
+    });
 
-    this.setState({record: result, clearEvents: 0});
     this.state.recordArr.push('=', result);
   }
   
@@ -172,6 +228,8 @@ export default class Desktop extends React.Component {
               this.state.recordArr.map((current, index) => {
                 if (index === this.state.recordArr.length - 1) {
                   return <span className="activeButton" key={index}>{`${current}`}</span>
+                } else if (current === '=') {
+                  return <span className="equal" key={index}>{`${current}`}</span>
                 }
                 return <span key={index}>{`${current}`}</span>
               })

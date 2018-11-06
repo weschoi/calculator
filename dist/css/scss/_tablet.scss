@@ -45,6 +45,47 @@ $button: rgb(23,26,34);
                 @include width_height(100%, 33%);
                 @include display(column, center, center);
 
+                padding-right: 12px;
+
+                > div {
+                    @include display(row, flex-end, center);
+                    // border: 1px solid red;
+
+                    > span {
+                        text-align: right;
+                    }
+                }
+
+                > div.result {
+                    @include width_height(100%, 70%);
+                    // border: 1px solid red;
+
+                    > span {
+                        font-size: 47px;
+                        color: $green;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 300;
+                    }
+                }
+
+                > div.record {
+                    @include width_height(100%, 30%);
+
+                    > span {
+                        margin-right: 4px;
+                        // font-size: 14px;
+                        font-size: 18px;
+                    }
+
+                    > span#op {
+                        color: $green;
+                    }
+
+                    > span#num {
+                        color: white*0.8;
+                    }
+                }
+
                 color: gray;
             }
 
@@ -60,17 +101,95 @@ $button: rgb(23,26,34);
                     color: $gray-letters;
                     text-align: center;
                     line-height: 43px;
+
+                    border: 0px solid $button;
+                    transition: 0.1s;
                 }
+
+                > span:hover {
+                    border: 2px solid $button*0.1;
+                    line-height: 38px;
+                    font-size: 17px;
+                    color: white;
+                }
+                
+                // > span:active {
+                //     color: white;
+                // }
 
                 > span.op {
                     color: $green;
                 }
+
+                > span.delete {
+                    @include display(row, center, center);
+                }
+
+                > span.hexagon {
+                    @include display(row, center, center);
+
+                    svg {
+                        path {
+                            stroke: #767779;
+                            fill: none;
+                            stroke-width: 1.5;
+                        }
+
+                        circle {
+                            fill: #767779;
+                        }
+                    }
+
+                    svg:hover {
+                        path {
+                            stroke-width: 0;
+                            fill: #767779;
+                        }
+
+                        circle {
+                            fill: white;
+                        }
+                    }
+                }
+
+                > span.equal {
+                    svg {
+                        path {
+                            stroke: $green;
+                            fill: none;
+                            stroke-width: 1.5;
+                        }
+
+                        rect {
+                            fill: $green;
+                        }
+                    }
+
+                    svg:hover {
+                        path {
+                            fill: $green;
+                        }
+
+                        rect {
+                            fill: white;
+                        }
+                    }
+                }
+
             }
         }
 
         > .home {
             @include display(row, center, center);
             @include width_height(100%, 9%);
+
+            svg {
+                circle {
+                    stroke: rgb(161, 165, 179);
+                    stroke-width: 3;
+                    fill: white;
+                }
+            }
         }
     }
 

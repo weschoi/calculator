@@ -11,8 +11,7 @@ export default class Desktop extends React.Component {
       recordArr: [],
       clearEvents: 0,
       equalMode: false,
-      decimalMode: false,
-      // result: ''
+      decimalMode: false
     }
   }
 
@@ -74,7 +73,7 @@ export default class Desktop extends React.Component {
             clearEvents: 0,
             equalMode: false
           })
-          
+
         } else {
 
           this.setState({
@@ -82,7 +81,7 @@ export default class Desktop extends React.Component {
             clearEvents: 0,
             equalMode: false
           })
-          
+
         }
       }
 
@@ -144,11 +143,6 @@ export default class Desktop extends React.Component {
       this.setState({
         recordArr: newRecordArr
       })
-
-      // this.state.recordArr.splice(recordArrLength -1, 1);
-      // console.log('recordArr: ', this.state.recordArr);
-      // if (lastArrayItemIsNumber)
-
     }
   }
 
